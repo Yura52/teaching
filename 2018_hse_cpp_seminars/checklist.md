@@ -32,6 +32,24 @@ _Remember_
 _Always_ (don't even think of opposite):
 - use `std::begin`, `std::end` instead of `.begin()`, `.end()`
 
+## Inheritance
+_Always_ (don't even think of opposite):
+- use "override" keyword when overriding a virtual method
+- don't call virtual methods from constructors and destructors
+- don't let exceptions leave destructor
+
+_When possible_ (there are very few cases when it's better to prefer opposite):
+- when you work with inheritance, write code in terms of pointers to base classes
+- if you are going to inherit from a class, ensure that it has a virtual destructor
+- prefer free non-friend functions to methods
+
+_Remember_
+- virtual functions are not free (perfomance reduction); sometimes alternatives are better (templates)
+- model "is-a" relationship via public inheritance
+- model "has-a" or "is-implemented-in-terms-of" via composition
+- use private inheritance to inherit features of a base class
+- Your code usually should give an abstraction, which corresponds to how the real world is designed; however, internal implementation can be absolutely different from that
+
 ## Lambdas
 _When possible_ (there are very few cases when it's better to prefer opposite):
 - use `auto` in lambdas' signatures

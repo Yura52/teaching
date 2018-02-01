@@ -4,7 +4,7 @@
 /*
 Step-by-step algorithm:
 
-1. Write 'class' + name of your class + "{}"
+1. Write 'class' + name of your class + "{};"
 
 class Person {
 

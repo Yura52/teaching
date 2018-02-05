@@ -50,6 +50,9 @@ class Vector {
 // We want to be able to infer "value_type" even if Iterator == T*
 // For this purpose you should use std::iterator_traits
 
+// But first, learn the second scenario where "typename" can be used:
+// https://stackoverflow.com/questions/1600936/officially-what-is-typename-for
+
 // http://en.cppreference.com/w/cpp/iterator/iterator_traits
 template<typename Iterator>
 struct iterator_traits {

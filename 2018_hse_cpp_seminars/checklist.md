@@ -53,3 +53,7 @@ _Remember_
 ## Lambdas
 _When possible_ (there are very few cases when it's better to prefer opposite):
 - use `auto` in lambdas' signatures
+
+## Advanced topics
+_Always_ (don't even think of opposite):
+- use std::move with rvalue references, but `std::forward` with universal references

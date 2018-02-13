@@ -59,29 +59,20 @@ private:
 // Examples:
 
 // "std::vector<int>" is a fully known type, so "std::vector<int>&&"" is just a rvalue-reference
-void foo(std::vector<int>&& v) {
-
-}
+void foo(std::vector<int>&& v) {}
 
 // "std::vector<T>" is not in triangle brackets! Only "T" is in triangle brackets!
-// So "std::vector<T>&&"" is a usual rvalue-reference again.
+// So "std::vector<T>&&" is a usual rvalue-reference again.
 template<typename T>
-void foo(std::vector<T>&& v) {
-
-}
+void foo(std::vector<T>&& v) {}
 
 // "T" is a template parameter of the function. So "T&&" is a universal reference.
-// So this is a usual rvalue-reference again.
 template<typename T>
-void foo(T&& v) {
-
-}
+void foo(T&& v) {}
 
 // So what is a universal reference? It's easier to show an example:
 template<typename T>
-void bar(T&& arg) {
-
-}
+void bar(T&& arg) {}
 // If you pass int-lvalue as the argument "arg",
 // then "T&& arg" transforms to "int& arg", i.e. lvalue-reference.
 // If you pass int-rvalue as the argument "arg",

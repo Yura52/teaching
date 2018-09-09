@@ -6,4 +6,4 @@ _Always_ (don't even think of opposite):
 
 ## Input/Output
 _Always_ (don't even think of opposite):
-- For printing use f-strings (works only if Python >= 3.6, in older versions use `.format()`). Obviously, if you just need to print `x` or convert x to string then `print(x)` and `str(x)` are better options :)
+- For printing use f-strings (works only if Python >= 3.6, in older versions use `.format()`). Obviously, if you just need to print `x` or convert `x` to string then `print(x)` and `str(x)` are better options :)

@@ -1,4 +1,4 @@
-### Learn `print`
+### `print`
 Documentation: https://docs.python.org/3/library/functions.html#print
 ```
 >>> print(1, 2, 3)
@@ -23,7 +23,7 @@ Documentation: https://docs.python.org/3/library/string.html#format-string-synta
 I have 14 apples
 ```
 
-### Learn `id`
+### `id`, `is`
 It helps you to check if different variables point to the same object.
 Documentation: https://docs.python.org/3/library/functions.html#id
 ```
@@ -31,7 +31,11 @@ Documentation: https://docs.python.org/3/library/functions.html#id
 >>> bbb = abc
 >>> id(aaa) == id(bbb)
 True
+>>> a is b  # it's exactly the same as the check above "id(aaa) == id(bbb)"
+True
+>>> b is a
+True
 >>> aaa += 1  # now aaa points to a brand new object (3) and bbb still points to the old one (2)
->>> id(aaa) == id(bbb)
+>>> a is b
 False
 ```

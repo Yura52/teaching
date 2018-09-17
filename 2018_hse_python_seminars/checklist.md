@@ -1,8 +1,14 @@
 # Checklist for writing C++ code
 
+## Essential
+_Always_ (don't even think of opposite):
+- AVOID CODE DUPLICATION (use functions, variables etc.)
+
 ## Code style
 _Always_ (don't even think of opposite):
-- strictly follow this codestyle: https://www.python.org/dev/peps/pep-0008
+- Strictly follow this codestyle: https://www.python.org/dev/peps/pep-0008
+- Variable and function names must be clear, unambiguous and minimize the chance
+of errors and typos. And they must be grammaticaly correct, because... why not?
 
 ## Input/Output
 _Always_ (don't even think of opposite):
@@ -20,12 +26,13 @@ immediately understand what the variable means whilst in the former way it's
 just `0` and it's not clear why zero, why stop when zero etc.
 
 When possible (there are very few cases when it's better to prefer opposite):
-- Avoid using global variables. In
+- Avoid using global variables. It's almost always more reasonable to pass
+the needed information as an argument to your function.
 
 ## Functions
 _Always_ (don't even think of opposite):
-- Use functions to: remove duplicating code, improve readibility of your code
-- Use typehints in your functions' signatures
+- Use functions to: remove duplicating code, improve readibility of your code.
+- Use typehints in your functions' signatures.
 
 ## Other
 _Always_ (don't even think of opposite):

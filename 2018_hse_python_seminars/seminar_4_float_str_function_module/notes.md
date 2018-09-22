@@ -1,7 +1,7 @@
 ## Float
 The main rule: **DO NOT COMPARE FLOATS**. Reason: float numbers are stored with
 non ideal precision:
-```
+```python
 >>> 0.1 + 0.2 == 0.3
 False
 >>> 1.0 + 1.0 == 2.0000000000000001

@@ -5,7 +5,7 @@ Some documentation about `bool` and its applications:
 3. https://docs.python.org/3/library/stdtypes.html#comparisons
 
 Example:
-```
+```python
 >>> a = 0
 >>> b = 1
 >>> c = 2
@@ -24,18 +24,18 @@ bbbbbb
 ## Attributes, methods, `dir`
 Attributes are objects, related to your object. You can list all the attributes
 via the function `dir`:
-```
+```python
 >>> x = -1
 >>> print(dir(x))
 ['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
 ```
 You can access the attributes via a dot: `x.<attribute name>`:
-```
+```python
 >>> x.__abs__
 <method-wrapper '__abs__' of int object at ...>
 ```
 Methods are attributes that can be called:
-```
+```python
 >>> x.__abs__()
 1
 ```
@@ -46,7 +46,7 @@ function `abs`: Python looks for the method `__abs__` and calls it.
 Let's look at other examples such as `__abs__` from the prevoius section.
 
 #### `bool(x)`
-```
+```python
 >>> x = -1
 >>> bool(x)
 True
@@ -60,7 +60,7 @@ method is supposed to return the length of the object. If it's zero than
 `bool(x)` will be False and otherwise True.
 
 #### `a < b`
-```
+```python
 >>> a = 1
 >>> b = 2
 >>> a < b
@@ -76,7 +76,7 @@ Similar examples:
 - `__ne__` ~ not equal ~ !=
 
 #### a + b
-```
+```python
 >>> a = 1
 >>> b = 2
 >>> a + b
@@ -86,7 +86,7 @@ Similar examples:
 ```
 
 #### x()
-```
+```python
 >>> print('hello', 'world)
 hello world
 >>> print.__call__('hello', 'world')

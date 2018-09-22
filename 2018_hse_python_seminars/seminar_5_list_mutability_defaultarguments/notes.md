@@ -1,26 +1,3 @@
-## Avoid recursions if possible
-In fact, function calls are not free: it takes some time and memory to call a function.
-It entails some constraints on the number of nested function calls you can make:
-```python
->>> def f(x):
-...     if x == 0:
-...         return 0
-...     else:
-...         return f(x - 1)
->>> f(999999999)
-RecursionError: maximum recursion depth exceeded in comparison
-```
-There is a way to check the limit:
-```python
->>> import sys
->>> sys.getrecursionlimit()  # The result depends on your computer and system
-3000
-```
-Usually you don't have to worry about that, however, there is one case when you do: recursions.
-You have to be very careful and prevent scenarious when a function calls itself
-too many times. If it's easy to rewrite such function in terms of loops, then do that: loops
-work much faster then function calls and they don't have any constraints :)
-
 ## Mutability is a superimportant concept of Python
 There are two kinds of objects: mutable and immutable.  
 It's impossible to change an **immutable** object inplace. When you try to modify
@@ -256,6 +233,29 @@ then write:
 ...         x = <some_mutable_object>
 ...     ...
 ```
+
+## Avoid recursions if possible
+In fact, function calls are not free: it takes some time and memory to call a function.
+It entails some constraints on the number of nested function calls you can make:
+```python
+>>> def f(x):
+...     if x == 0:
+...         return 0
+...     else:
+...         return f(x - 1)
+>>> f(999999999)
+RecursionError: maximum recursion depth exceeded in comparison
+```
+There is a way to check the limit:
+```python
+>>> import sys
+>>> sys.getrecursionlimit()  # The result depends on your computer and system
+3000
+```
+Usually you don't have to worry about that, however, there is one case when you do: recursions.
+You have to be very careful and prevent scenarious when a function calls itself
+too many times. If it's easy to rewrite such function in terms of loops, then do that: loops
+work much faster then function calls and they don't have any constraints :)
 
 ## Help
 It's a fast way to find documentation. Try this (in order to quit the help, press 'q')

@@ -268,4 +268,4 @@ It's a fast way to find documentation. Try this (in order to quit the help, pres
 >>> ...
 Ellipsis
 ```
-How to use `...` ? I have no idea :)
+:)

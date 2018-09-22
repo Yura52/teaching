@@ -127,7 +127,7 @@ False
 []
 
 >>> def f(x):
-...     x.append(1)
+...     x[0].append(1)
 >>> a = [[]]
 >>> f(a)
 >>> a

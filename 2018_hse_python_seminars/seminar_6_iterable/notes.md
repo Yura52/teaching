@@ -184,5 +184,5 @@ For example, if you want to iterate over a slice of your list, you can use
 
 
 ## Under the hood, as always, everything works via magic methods
-What exactly happens when you write `for`? How to create your own iterables? [This article](hackernoon.com/how-iterables-actually-work-in-python-65c36ff91c1e) gives the answers (some knowledge
+What exactly happens when you write `for`? How to create your own iterables? [This article](http://hackernoon.com/how-iterables-actually-work-in-python-65c36ff91c1e) gives the answers (some knowledge
 on classes and methods is required).

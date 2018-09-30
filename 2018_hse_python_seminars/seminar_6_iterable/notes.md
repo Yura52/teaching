@@ -226,6 +226,19 @@ Error: StopIteration
 Error: StopIteration
 ```
 
+One more example:
+```python
+>>> def f(x):
+...     return x * 2
+>>> a = map(f, range(3))
+>>> next(a)
+0
+>>> list(a)
+[2, 4]
+>>> # we got all the elements except for the first one, because we have already
+>>> # extracted it via `next`
+```
+
 Now you can understand why you can iterate over generators only once: because
 they are iterators for themselves. And since you can iterate over an iterator only once
 (regardless of what the iterator belongs to: collection or generator), you can iterate

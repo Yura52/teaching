@@ -188,5 +188,45 @@ For example, if you want to iterate over a slice of your list, you can use
 - What exactly happens when you write `for`?
 - How to create your own iterables?
 
-[This article](http://hackernoon.com/how-iterables-actually-work-in-python-65c36ff91c1e) gives the answers (some knowledge
-on classes and methods is required).
+Let's try to answer all these questions.
+When you write `for`, firstly, an **iterator** (a special object for iterating) is created via `iter`.
+If your iterable is a collection, than this iterator is a different object.  
+If your iterable is a "generator", than *usually* the object itself is returned.
+```python
+>>> a = [1, 2]
+>>> iter_a = iter(a)
+>>> a is iter_a
+False
+>>> def f(x):
+...     return x * 2
+>>> m = map(f, a)
+>>> iter_m = iter(m)
+>>> m is iter_m
+True
+>>> iter(iter_a) is iter_a
+True
+```
+
+After that, at the beginning of every iteration, `next` is applied to the iterator.
+When `next` is applied and iterator still has some elements, the next element is returned.
+Otherwise, the loop stops.
+```python
+>>> # it's a continuation of the previous section with code
+>>> next(iter_a)
+1
+>>> next(iter_a)
+2
+>>> next(iter_a)
+Error: StopIteration
+>>> next(iter_m)
+2
+>>> next(iter_m)
+4
+>>> next(iter_m)
+Error: StopIteration
+```
+
+Now you can understand why you can iterate over generators only once: because
+they are iterators for themselves. And since you can iterate over an iterator only once
+(regardless of what the iterator belongs to: collection or generator), you can iterate
+over generator only once, too.

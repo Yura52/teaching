@@ -158,8 +158,8 @@ By contrast, when you iterate over `set`, you get elements in a "random" order (
 
 _Example_: if you have a `list` and want to search for some value just once, don't convert
 it to `set`, because creating a `set` also takes time. Remember: searching in a `list`
-is one simple loop, but creating a set is also a loop over the same list (and the loop
-is less simple, actually). Let's measure time taking creating `set` into account:
+is one simple loop, but creating a set is a loop over the same list (and the loop
+is not that simple, actually). Let's measure time taking creating `set` into account:
 ```python
 >>> size = 10000000
 >>> a = list(range(size))
@@ -195,7 +195,7 @@ Wall time: 1.51 s
 10000000
 >>> %%time
 ... set_a = set(a)
-... sum(1 for x in b if x in a)
+... sum(1 for x in b if x in set_a)
 Wall time: 1.35 s
 10000000
 ```

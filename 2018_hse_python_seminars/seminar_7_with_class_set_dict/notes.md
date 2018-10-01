@@ -212,4 +212,5 @@ Don't do that. It's slower because of conversions.
 ## Use `frozenset` if you don't plan to mutate your set
 It's just faster. You can think of it as about "`list` vs `tuple`": `tuple` is faster
 and more compact than `list`, but doesn't allow to mutate it.
-The same applies to "`frozenset` vs `set`".
+The same applies to "`frozenset` vs `set`". So, the ideal solution of the
+previous example uses `frozenet` instead of `set`.

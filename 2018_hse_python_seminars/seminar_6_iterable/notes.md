@@ -186,9 +186,8 @@ For example, if you want to iterate over a slice of your list, you can use
 ## Learn `next`, `iter` and how `for` works under the hood
 - How to extract the first element from a generator (`map`, `filter` etc.)?
 - What exactly happens when you write `for`?
-- How to create your own iterables?
 
-Let's try to answer all these questions.
+Let's try to answer these questions.
 When you write `for`, firstly, an **iterator** (a special object for iterating) is created via `iter`.
 If your iterable is a collection, than this iterator is a different object.  
 If your iterable is a "generator", than *usually* the object itself is returned.

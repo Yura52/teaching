@@ -117,7 +117,7 @@ _Examples_: `range`
 You can iterate over them only once. After that such iterables are empty.  
 _Examples_: file, `map`, `filter`, `zip`, `reversed`, `enumerate`  
 This kind of iterables is fundamental and ubiquitous, because usually you don't
-need to materialize all the objects at once, you just need to iterate over them.
+need to materialize all the objects at once, you just need to iterate over them **ONCE**.
 For example, if you have an immense list with numbers and you want to iterate once only
 over even elements, obviously, you don't want to create a new immense list for that.
 Instead, you can use `filter` that generates such elements on the fly. Moreover,

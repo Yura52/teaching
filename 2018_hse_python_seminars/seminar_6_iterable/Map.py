@@ -1,3 +1,6 @@
+# try to run this script
+
+
 class Map:
     def __init__(self, function, iterable):
         self._function = function

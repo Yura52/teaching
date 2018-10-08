@@ -1,4 +1,4 @@
-# start reading from List, then go to ListIterator, then to StrangeList
+# try to run this script
 
 
 class ListIterator:

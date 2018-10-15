@@ -10,10 +10,7 @@ class Map:
         return self
 
     def __next__(self):
-        try:
-            return self._function(next(self._iterator))
-        except StopIteration:
-            raise StopIteration
+        return self._function(next(self._iterator))
 
 x = Map(lambda x: x * 2, range(5))
 print(f'1. list(x): {list(x)}')

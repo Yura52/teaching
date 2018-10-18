@@ -15,9 +15,9 @@ class Line:
 
     def __call__(self, x: float) -> float:
         return Line.calculate(self._k, self._b, x)
-    
+
     @staticmethod  # it's better to create a function than a staticmethod
-    def calculate(k, b, x):
+    def calculate(k: float, b: float, x: float) -> float:
         return k * x + b
 
 

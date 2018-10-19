@@ -29,6 +29,11 @@ P.S. Такой подход прокатывает даже на собесед
 `itertools`: https://docs.python.org/3/library/itertools.html  
 `math`: https://docs.python.org/3/library/math.html
 
+`class`:
+- https://github.com/StrausMG/teaching/tree/master/2018_hse_python_seminars/seminar_12_class_class_class
+- https://github.com/StrausMG/teaching/tree/master/2018_hse_python_seminars/seminar_13_inheritance_exception
+- <ваши решения 12-го контеста>
+
 
 # Организационные моменты
 

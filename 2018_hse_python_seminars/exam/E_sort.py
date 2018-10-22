@@ -33,7 +33,7 @@ for line in map(lambda x: x.rstrip('\n'), sys.stdin):
         number = (
             int(lstripped_line[:digit_end_index])
             if starts_with_number
-            else -9 ** 9999
+            else -math.inf
         )
         key = (number, key)
     keys_and_lines.append((key, line))

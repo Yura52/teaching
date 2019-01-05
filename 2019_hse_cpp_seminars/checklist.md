@@ -16,7 +16,7 @@ _When possible_ (there are very few cases when it's better to prefer opposite):
 ## Functions
 
 _When possible_ (there are very few cases when it's better to prefer opposite):
-- pass input arguments of primitive types by `const` value
+- pass input arguments of primitive types by `const` value (without `const` in declarations; with `const` in definitions)
 - pass input arguments of complex types by `const` reference
 - pass output arguments by pointers (raw pointers are suitable for this purpose)
 

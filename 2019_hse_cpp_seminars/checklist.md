@@ -14,11 +14,14 @@ _When possible_ (there are very few cases when it's better to prefer opposite):
 - prefer simple structs instead of using `std::pair` (it improves readabily: clear field names instead of `first` and `second`)
 
 ## Functions
-
 _When possible_ (there are very few cases when it's better to prefer opposite):
 - pass input arguments of primitive types by `const` value (without `const` in declarations; with `const` in definitions)
 - pass input arguments of complex types by `const` reference
 - pass output arguments by pointers (raw pointers are suitable for this purpose)
+
+## Containers
+_Always_ (don't even think of opposite):
+- use `reserve` method if you know beforehand how many elements you are going to store in the container
 
 ## Memory, pointers
 _When possible_ (there are very few cases when it's better to prefer opposite):
@@ -27,10 +30,6 @@ _When possible_ (there are very few cases when it's better to prefer opposite):
 
 _Remember_
 - If there is `delete` in your code and you are not writing library-like low-level code than for 99% you are doing something wrong; consider smart pointers to avoid that
-
-## Iterators
-_Always_ (don't even think of opposite):
-- use `std::begin`, `std::end` instead of `.begin()`, `.end()`
 
 ## Inheritance
 _Always_ (don't even think of opposite):

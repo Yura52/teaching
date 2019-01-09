@@ -7,7 +7,7 @@ using i32 = int32_t;
 
 
 int main() {
-    int a = 123;
+    i32 a = 123;
     char b = 'A';
     bool c = true;
     double d = 1.23;

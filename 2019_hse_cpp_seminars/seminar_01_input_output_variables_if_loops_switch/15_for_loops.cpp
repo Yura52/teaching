@@ -24,8 +24,9 @@ int main() {
     // If "range-based for loop" doesn't solve your problem, use iterators
     // (a)
     for (auto it = s.cbegin(); it != s.cend(); ++it) {
-        std::cout << *it << '\n';
+        std::cout << *it << ' ';
     }
+    std::cout << '\n';
 
     // (b)
     for (auto it = s.begin(); it != s.end(); ++it) {
@@ -34,20 +35,23 @@ int main() {
 
     // (c) Iterate in a reversed order (cannot be done via "range-based for loop")
     for (auto it = s.crbegin(); it != s.crend(); ++it) {
-        std::cout << *it << '\n';
+        std::cout << *it << ' ';
     }
+    std::cout << '\n';
 
     // Only if nothing above works for you, use indexing
     // (a)
     for (i32 i = 0; i < s.size(); ++i) {
-        std::cout << s[i] << '\n';
+        std::cout << s[i] << ' ';
     }
+    std::cout << '\n';
 
     // (d) Iterate over every second element
     // (cannot be solved via "range-based for loop" nor via iterators)
     for (i32 i = 0; i < s.size(); i += 2) {
-        std::cout << s[i] << '\n';
+        std::cout << s[i] << ' ';
     }
+    std::cout << '\n';
 
     return 0;
 }

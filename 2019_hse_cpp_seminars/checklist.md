@@ -13,6 +13,15 @@ _When possible_ (there are very few cases when it's better to prefer opposite):
 - use `const`
 - prefer simple structs instead of using `std::pair` (it improves readabily: clear field names instead of `first` and `second`)
 
+## `If`-statement
+_When possible_ (there are very few cases when it's better to prefer opposite):
+- don't omit curly braces (see the codestyle above to learn when it is appropriate to omit them)
+
+## Loops
+_Always_ (don't even think of opposite):
+- use "range-based for loop" when possible; if it is not possible, iterate via iterators; only iterators don't fit your
+needs either, use indexing
+
 ## Functions
 _When possible_ (there are very few cases when it's better to prefer opposite):
 - pass input arguments of primitive types by `const` value (without `const` in declarations; with `const` in definitions)

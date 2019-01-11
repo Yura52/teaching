@@ -13,14 +13,17 @@ _When possible_ (there are very few cases when it's better to prefer opposite):
 - use `const`
 - prefer simple structs instead of using `std::pair` (it improves readabily: clear field names instead of `first` and `second`)
 
+## Operators
+_Always_ (don't even think of opposite):
+- prefer preincrement (++i) to postincrement (i++) **if the goal is simply to increment**
+
 ## `If`-statement
 _When possible_ (there are very few cases when it's better to prefer opposite):
 - don't omit curly braces (see the codestyle above to learn when it is appropriate to omit them)
 
 ## Loops
 _Always_ (don't even think of opposite):
-- use "range-based for loop" when possible; if it is not possible, iterate via iterators; only iterators don't fit your
-needs either, use indexing
+- use "range-based for loop" when possible; if it is not possible, iterate via iterators; only if both "range-based for loop" and iterators don't solve your problem, use indexing
 
 ## Functions
 _When possible_ (there are very few cases when it's better to prefer opposite):

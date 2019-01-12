@@ -6,13 +6,13 @@
 using i32 = int32_t;
 
 
-void PrintVector(const std::vector<int>& v) {
+void PrintVector(const std::vector<i32>& v) {
     std::cout
         << "empty: " << std::boolalpha << v.empty() << '\n'
         << "size: " << v.size() << '\n'
         << "capacity: " << v.capacity() << '\n'
         << "data: ";
-    for (auto x: v) {
+    for (const auto x: v) {
         std::cout << x << ' ';
     }
     std::cout << '\n';

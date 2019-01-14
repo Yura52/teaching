@@ -3,6 +3,13 @@
 ## Code style
 http://google.github.io/styleguide/cppguide.html
 
+## Compilation
+_Always_ (don't even think of opposite):
+- use `-Wall` flag (show all warnings)
+
+_When possible_ (there are very few cases when it's better to prefer opposite):
+- use `-Werror` flag (treat warning as errors)
+
 ## Types, variables
 _Always_ (don't even think of opposite):
 - prefer types from [\<cstdint\>](http://en.cppreference.com/w/cpp/header/cstdint) to `int`, `long` etc.; if you prefer more concise style, you can do `using i32 = int32_t;` and similar staff at the beginning of your programs 
@@ -12,6 +19,10 @@ _When possible_ (there are very few cases when it's better to prefer opposite):
 - use `auto`
 - use `const`
 - prefer simple structs instead of using `std::pair` (it improves readabily: clear field names instead of `first` and `second`)
+
+## Input/Output
+_When possible_ (there are very few cases when it's better to prefer opposite):
+- prefer `\n` to `std::endl`
 
 ## Operators
 _Always_ (don't even think of opposite):
@@ -56,8 +67,8 @@ _When possible_ (there are very few cases when it's better to prefer opposite):
 
 _Remember_
 - virtual functions are not free (perfomance reduction); sometimes alternatives are better (templates)
-- model "is-a" relationship via public inheritance
-- model "has-a" or "is-implemented-in-terms-of" via composition
+- public inheritance implies "is-a" relationship
+- composition implies "has-a" or "is-implemented-in-terms-of"
 - use private inheritance to inherit features of a base class
 - Your code usually should give an abstraction, which corresponds to how the real world is designed; however, internal implementation can be absolutely different from that
 
@@ -67,4 +78,4 @@ _When possible_ (there are very few cases when it's better to prefer opposite):
 
 ## Advanced topics
 _Always_ (don't even think of opposite):
-- use std::move with rvalue references, but `std::forward` with universal references
+- use `std::move` with rvalue references, but `std::forward` with universal references

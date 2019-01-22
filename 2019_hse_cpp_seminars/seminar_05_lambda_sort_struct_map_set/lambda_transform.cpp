@@ -8,11 +8,6 @@ using i32 = int32_t;
 
 
 int main() {
-    const auto add = [](auto a, auto b) {
-        return a + b;
-    };
-    std::cout << add(2, 3) << '\n';
-
     std::vector<i32> a = {1, 2, 3};
     std::vector<i32> b;
     b.reserve(a.size());

@@ -30,7 +30,7 @@ _Always_ (don't even think of opposite):
 
 ## `If`-statement
 _When possible_ (there are very few cases when it's better to prefer opposite):
-- don't omit curly braces (see the codestyle above to learn when it is appropriate to omit them)
+- don't omit curly braces (see the codestyle above to learn when it is appropriate to omit them; see [this](https://nakedsecurity.sophos.com/2014/02/24/anatomy-of-a-goto-fail-apples-ssl-bug-explained-plus-an-unofficial-patch/))
 
 ## Loops
 _Always_ (don't even think of opposite):

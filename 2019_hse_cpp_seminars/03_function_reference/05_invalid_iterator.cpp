@@ -12,22 +12,6 @@ int main() {
     std::cout << "*it " << *it << '\n';
     v.push_back(20);
     std::cout << "*it " << *it << '\n';
-    v.push_back(20);
-    std::cout << "*it " << *it << '\n';
-    v.push_back(20);
-    std::cout << "*it " << *it << '\n';
-    v.push_back(20);
-    std::cout << "*it " << *it << '\n';
-    v.push_back(20);
-    std::cout << "*it " << *it << '\n';
-    v.push_back(20);
-    std::cout << "*it " << *it << '\n';
-    v.push_back(20);
-    std::cout << "*it " << *it << '\n';
-    v.push_back(20);
-    std::cout << "*it " << *it << '\n';
-    v.push_back(20);
-    std::cout << "*it " << *it << '\n';
     // try two duplicate two previous lines ~10 times
 
     return 0;

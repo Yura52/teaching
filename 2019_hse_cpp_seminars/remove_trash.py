@@ -9,7 +9,7 @@ def main():
     args = parser.parse_args()
 
     for path in os.listdir(args.dir):
-        if not path.endswith('.cpp') and not path.endswith('.py'):
+        if '.' not in path:
             os.remove(os.path.join(args.dir, path))
 
 

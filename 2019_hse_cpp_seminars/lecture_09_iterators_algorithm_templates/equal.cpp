@@ -14,6 +14,8 @@ bool Equal(
         if (*first_1 != *first_2) {
             return false;
         }
+        ++first_1;
+        ++first_2;
     }
     return true;
 }

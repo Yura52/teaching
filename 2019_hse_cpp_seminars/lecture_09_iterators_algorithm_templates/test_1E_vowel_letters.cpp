@@ -16,8 +16,8 @@ std::pair<size_t, size_t> FindVowels(
     const std::string& text, size_t pos
 ) {
     const auto first = std::find_if(
-        std::next(text.cbegin(), pos),
-        text.cend(),
+        std::next(text.begin(), pos),
+        text.end(),
         IsVowel
     );
     if (first == text.end()) {
@@ -26,7 +26,7 @@ std::pair<size_t, size_t> FindVowels(
     const auto last = std::find_if_not(
         first, text.end(), IsVowel
     );
-    return {std::distance(text.cbegin(), first), std::distance(first, last)};
+    return {std::distance(text.begin(), first), std::distance(first, last)};
 }
 
 

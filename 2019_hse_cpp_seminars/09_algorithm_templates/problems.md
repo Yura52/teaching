@@ -33,7 +33,8 @@ std::vector<i32>::iterator FindIf(??? first, ??? last, ??? predicate);
 
 # 2.C
 ```c++
-std::vector<i32>::iterator FindIf(??? first, ??? last, ??? predicate);
+template<???>
+??? FindIf(??? first, ??? last, ??? predicate);
 ```
-Добавить поддержку векторов любого типа, не только `int`.
+Добавить поддержку векторов любого типа, не только `i32`.
 

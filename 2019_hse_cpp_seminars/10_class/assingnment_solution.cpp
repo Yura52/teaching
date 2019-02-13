@@ -21,7 +21,7 @@ public:
         return *this;
     }
 
-    std::string GetName() const {
+    const std::string& GetName() const {
         return name_;
     }
 

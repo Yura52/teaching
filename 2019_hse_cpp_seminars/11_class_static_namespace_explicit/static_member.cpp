@@ -20,5 +20,6 @@ int main() {
     std::cout << &x.a  << ' ' << x.a  << '\n';
     std::cout << &y.a  << ' ' << y.a  << '\n';
     std::cout << &A::a << ' ' << A::a << '\n';
+    std::cout << sizeof(x) << '\n';
     return 0;
 }

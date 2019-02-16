@@ -24,7 +24,7 @@ public:
         *this = other;
     }
 
-    Chat(const std::string& name)
+    explicit Chat(const std::string& name)
         : name_{name}
     {}
 

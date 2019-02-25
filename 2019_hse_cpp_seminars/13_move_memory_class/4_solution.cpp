@@ -16,7 +16,7 @@ public:
 
     Vector(Vector&& other) {
         std::cout << "move constructor\n";
-        *this = other;
+        *this = std::move(other);
     }
 
     Vector& operator=(const Vector& other) {

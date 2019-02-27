@@ -2,7 +2,7 @@
 import random
 import timeit
 
-count = 10000000
+count = 1000000
 false_then_true = [False] * (count // 2) + [True] * (count // 2)
 mixed = false_then_true.copy()
 random.shuffle(mixed)

@@ -1,7 +1,10 @@
-#pragma once
+#include <cstdlib>
 
 template <typename T>
 class List {
+private:
+    struct Node;
+
 public:
     using value_type = T;
     using pointer = T*;
@@ -11,17 +14,6 @@ public:
 
     private:
         Node* ptr_{nullptr};
-    };
-
-private:
-    struct Node {
-        Node()
-            : prev{this}, next{this}
-        {}
-
-        Node* prev{nullptr};
-        Node* next{nullptr};
-        pointer value{nullptr};
     };
 
 public:
@@ -37,6 +29,16 @@ public:
     }
 
 private:
+    struct Node {
+        Node()
+            : prev{this}, next{this}
+        {}
+
+        Node* prev{nullptr};
+        Node* next{nullptr};
+        pointer value{nullptr};
+    };
+
     Node* end_{nullptr};
     size_t size_{0};
 };

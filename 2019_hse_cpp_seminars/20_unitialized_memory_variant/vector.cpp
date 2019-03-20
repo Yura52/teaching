@@ -5,10 +5,10 @@ template<typename T>
 class Vector {
 public:
     using value_type = T;
-    using pointer = T*;
-    using const_pointer = const T*;
-    using reference = T&;
-    using const_reference = const T&;
+    using pointer = value_type*;
+    using const_pointer = const value_type*;
+    using reference = value_type&;
+    using const_reference = const value_type&;
     using iterator = pointer;
     using const_iterator = const_pointer;
 
@@ -22,10 +22,15 @@ public:
         if (capacity_ >= size) {
             return;
         }
+        const auto count = size_;
         pointer data = reinterpret_cast<value_type*>(new char[size * sizeof(value_type)]);
         std::uninitialized_move_n(begin(), size_, data);
+        // for (size_t i = 0; i < size; ++i) {
+        //     new (data[i]) value_type(std::move(data_[i]));
+        // }
         delete_data();
         data_ = data;
+        size_ = count;
         capacity_ = size;
     }
 
@@ -64,7 +69,7 @@ private:
     }
 
     static void free_memory(pointer data) {
-        operator delete[](reinterpret_cast<char*>(data));
+        operator delete[](data);
     }
 
     pointer data_{nullptr};

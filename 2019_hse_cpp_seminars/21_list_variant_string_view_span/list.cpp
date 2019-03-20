@@ -7,7 +7,8 @@ private:
 
 public:
     using value_type = T;
-    using pointer = T*;
+    using pointer = value_type*;
+    using const_reference = const value_type&;
 
     class Iterator {
         friend class List;
@@ -17,7 +18,7 @@ public:
     };
 
 public:
-    void insert(Iterator position, const T& value) {
+    void insert(Iterator position, const_reference value) {
         Node* node = new Node;
         node->prev = position.ptr_->prev;
         node->next = position.ptr_;

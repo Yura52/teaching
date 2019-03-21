@@ -4,15 +4,16 @@
 class Person {
 public:
     Person() = default;
+    virtual ~Person() = default;
 
     explicit Person(const std::string& name) : name_{name} {}
 
     Person(const Person& other) : name_{other.name_ + "_copy"} {
-        std::cout << "constructed " << name_ << " from " << other.name_ << '\n';
+        std::cout << "Person(const Person&)\n";
     }
 
     Person(Person&& other) : name_{std::move(other.name_)} {
-        std::cout << "Person(Person&& other)\n";
+        std::cout << "Person(Person&&)\n";
     }
 
     std::string GetName() const {
@@ -48,10 +49,11 @@ private:
     const std::string name_;
 };
 
-// The goal is to write "MakeUnique<Student>(some_other_person);"
+// The goal is to write:
+// MakeUnique<Student>(some_other_person);
 
-// template<typename T, typename A>
-// std::unique_ptr<T> MakeUnique(A arg) {
+// template<typename T, typename Arg>
+// std::unique_ptr<T> MakeUnique(Arg arg) {
 //     return std::unique_ptr<T>(new T(arg));
 // }
 
@@ -67,7 +69,8 @@ private:
 
 // =================================================================================================
 // UNIVERSAL REFERENCE
-// (firstly let's learn how to distinguish between rvalue-references and universal references)
+// (firstly let's learn how to distinguish between
+// rvalue-references and universal references)
 // Then after examples I'll explain what it is.
 // If you see SomeType&& and "SomeType" is a template parameter
 // (i.e. it is in triangle brackets after the word "template")
@@ -114,23 +117,23 @@ T&& forward(typename std::remove_reference<T>::type& a) noexcept {
 // =================================================================================================
 // Now we can write a solution.
 
-template<typename T, typename A>
-std::unique_ptr<T> MakeUnique(A&& arg) {
-    return std::unique_ptr<T>(new T(std::forward<A>(arg)));
-}
-
-// template<typename T, typename... Args>
-// std::unique_ptr<T> MakeUnique(Args&&... args) {
-//     return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+// template<typename T, typename A>
+// std::unique_ptr<T> MakeUnique(A&& arg) {
+//     return std::unique_ptr<T>(new T(std::forward<A>(arg)));
 // }
 
+template<typename T, typename... Args>
+std::unique_ptr<T> MakeUnique(Args&&... args) {
+    return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+}
+
 int main() {
-    Person a("Antosha");
+    const Person a("Antosha");
     const auto a_ptr = MakeUnique<Student>(a);
 
     const auto v_ptr = MakeUnique<Student>(MakePerson("Vitalik"));
 
-    // const auto d_ptr = MakeUnique<Student>("Donald", "Duck");
+    const auto d_ptr = MakeUnique<Student>("Donald", "Duck");
 
     return 0;
 }

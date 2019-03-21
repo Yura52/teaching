@@ -6,7 +6,7 @@ using i32 = int32_t;
 
 void ScanVector(
     const std::vector<i32>& v,
-    const std::function<int(std::span<i32>)>& callback
+    const std::function<void(std::span<i32>)>& callback
 ) {
     for (size_t i = 0; i < v.size(); ++i) {
         if (v[i] == 0) {

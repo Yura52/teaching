@@ -1,10 +1,6 @@
 #include <iostream>
 #include <string_view>
 
-size_t BadLengthWithExtraCopy(const std::string& s) {
-    return s.size();
-}
-
 size_t Length(std::string_view s) {
     return s.size();
 }
